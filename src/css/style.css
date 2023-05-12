@@ -68,7 +68,24 @@ body {
     color: white;
 }
 
-.Jogo button:hover{
+.Jogo button:hover {
     filter: brightness(0.9);
     cursor: pointer;
+}
+
+.Jogo div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.Jogo p {
+    font-family: 'Noto Sans';
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 68px;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
