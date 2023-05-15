@@ -11,10 +11,10 @@ export default function Jogo({ setJogo, listaPalavras, setPalavra, jogo, display
     const img = [img0, img1, img2, img3, img4, img5, img6];
     return (
         <div className="Jogo">
-            <img src={img[nErros]} alt={`imgaem da forca no estagio ${nErros}`}></img>
+            <img data-test="game-image" src={img[nErros]} alt={`imgaem da forca no estagio ${nErros}`}></img>
             <div>
-                <button onClick={() => comecaJogo(setJogo, listaPalavras, setPalavra, setDisplay, setCor, setNErros, setLetrasClicadas)} disabled={jogo ? true : false}>Escolher Palavra</button>
-                <p className={`palavra ${cor}`}>{display}</p>
+                <button data-test="choose-word" onClick={() => comecaJogo(setJogo, listaPalavras, setPalavra, setDisplay, setCor, setNErros, setLetrasClicadas)} disabled={jogo ? true : false}>Escolher Palavra</button>
+                <p data-test="word" className={`palavra ${cor}`}>{display}</p>
             </div>
         </div>
     );

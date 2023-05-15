@@ -9,7 +9,7 @@ export default function Letras({ jogo, setLetrasClicadas, letrasClicadas, palavr
 
 function Letra({ jogo, text, setLetrasClicadas, letrasClicadas, palavra, setNErros , nErros, setDisplay, setCor, setJogo}) {
     return (
-        <button onClick={() => selecionaLetra(setLetrasClicadas, text, letrasClicadas, palavra, setNErros, nErros, setDisplay, setCor, setJogo)} className="Letra" disabled={(!jogo || letrasClicadas.includes(text)) ? true : false}>
+        <button data-test="letter" onClick={() => selecionaLetra(setLetrasClicadas, text, letrasClicadas, palavra, setNErros, nErros, setDisplay, setCor, setJogo)} className="Letra" disabled={(!jogo || letrasClicadas.includes(text)) ? true : false}>
             {(text.toUpperCase())}
         </button>
     );
