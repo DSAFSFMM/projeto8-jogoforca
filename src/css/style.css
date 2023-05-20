@@ -73,7 +73,7 @@ body {
     cursor: pointer;
 }
 
-.Jogo div{
+.Jogo div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -90,9 +90,75 @@ body {
     text-align: center;
 }
 
-.verde{
+.verde {
     color: #27AE60;
 }
-.vermelho{
+
+.vermelho {
     color: #FF0000;
+}
+
+/*Bonus*/
+
+.Chute {
+    display: flex;
+    justify-content: center;
+    margin-top: 64px;
+    gap: 0 15px;
+}
+
+.Chute input {
+    width: 353px;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid #CCCCCC;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    padding-left: 10px;
+}
+
+.Chute input:focus{
+    outline: none;
+}
+
+.Chute button {
+    background: #E1ECF4;
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
+    width: 100px;
+    height: 40px;
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3C76A1;
+}
+.Chute button:hover{
+    cursor: pointer;
+    background: #9FAAB5;
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
+    color: #798A9F;
+}
+.Chute button:disabled{
+    cursor: default;
+    background: #9FAAB5;
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
+    color: #798A9F;
+}
+
+.Chute p {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
 }

@@ -7,31 +7,32 @@ import img5 from "./assets/forca5.png"
 import img6 from "./assets/forca6.png"
 
 
-export default function Jogo({ setJogo, listaPalavras, setPalavra, jogo, display, setDisplay, nErros, cor, setCor, setNErros, setLetrasClicadas}) {
+export default function Jogo({ setJogo, listaPalavras, setPalavra, display, setDisplay, nErros, cor, setCor, setNErros, setLetrasClicadas}) {
     const img = [img0, img1, img2, img3, img4, img5, img6];
+
+    function comecaJogo() {
+        let placeHolder = "";
+        setJogo(true);
+        setCor("");
+        setNErros(0);
+        setLetrasClicadas([]);
+        listaPalavras.sort(comparador);
+        setPalavra(listaPalavras[0].split(""));
+        for (let i = 0; i < listaPalavras[0].length; i++) {
+            placeHolder += " _"
+        }
+        setDisplay(placeHolder);
+    }
+
     return (
         <div className="Jogo">
             <img data-test="game-image" src={img[nErros]} alt={`imgaem da forca no estagio ${nErros}`}></img>
             <div>
-                <button data-test="choose-word" onClick={() => comecaJogo(setJogo, listaPalavras, setPalavra, setDisplay, setCor, setNErros, setLetrasClicadas)} disabled={jogo ? true : false}>Escolher Palavra</button>
+                <button data-test="choose-word" onClick={() => comecaJogo()} >Escolher Palavra</button>
                 <p data-test="word" className={`palavra ${cor}`}>{display}</p>
             </div>
         </div>
     );
-}
-
-function comecaJogo(setJogo, listaPalavras, setPalavra, setDisplay, setCor, setNErros, setLetrasClicadas) {
-    let placeHolder = "";
-    setJogo(true);
-    setCor("");
-    setNErros(0);
-    setLetrasClicadas([]);
-    listaPalavras.sort(comparador);
-    setPalavra(listaPalavras[0].split(""));
-    for (let i = 0; i < listaPalavras[0].length; i++) {
-        placeHolder += " _"
-    }
-    setDisplay(placeHolder);
 }
 
 function comparador() {
